@@ -1,0 +1,22 @@
+# OS X folder info
+.DS_Store
+
+# Ignore all IDEA/WebStorm files
+.idea/*
+
+# ...except these;
+!.idea/codeStyleSettings.xml
+!.idea/misc.xml
+
+# Node.js modules
+node_modules
+
+# NPM log file
+npm-debug.log
+
+# Bower components
+bower_components
+
+# Build folders
+.tmp
+public
