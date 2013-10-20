@@ -1,0 +1,27 @@
+{
+    "name": "poquete.com",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "es5-shim": "~2.0.8",
+        "json3": "~3.2.4",
+        "loglevel": "~0.4.0",
+        "lodash": "~2.2.1",
+        "underscore.string": "~2.3.3",
+        "jquery": "~1.10.2",
+        "angular": "~1.2.0",
+        "angular-route": "~1.2.0",
+        "angular-cache": "~1.2.0",
+        "angular-i18n": "~1.2.0",
+        "angular-animate": "~1.2.0",
+        "angular-sanitize": "~1.2.0",
+        "angular-translate": "~1.1.0",
+        "bootstrap": "~3.0.0"
+    },
+    "devDependencies": {
+        "angular-mocks": "~1.2.0"
+    },
+    "resolutions": {
+        "angular": "~1.2.0"
+    }
+}

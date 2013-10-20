@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html id="ng-app" ng-app="poquete">
+<html ng-app="poquete">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
         <title>Poquete.com</title>
-        <link rel="stylesheet" href="css/thrills.min.css">
+        <link rel="stylesheet" href="/css/poquete.min.css">
     </head>
-    <body>
+    <body ng-cloak ng-controller="bodyCtrl">
     	<h1>Thrills.com</h1>
-    	
+        <script src="/js/vendor.min.js"></script>
+        <script src="/js/poquete.js"></script>    	
     </body>
 </html>
