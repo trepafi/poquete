@@ -1,12 +1,22 @@
 (function () {
     'use strict';
-	angular.module('poquete.components.textField', [])
-		.directive('textField', function() {
+	angular.module('lt.components.inputText', [])
+		.directive('inputText', function() {
 			return {
 				restrict: 'E',
 				replace: true,
-				controller: 'inputCtrl',
-				templateUrl: '/widgets/components/inputText/inputText.html'
+				scope: {
+					width: '@',
+					label: '@',
+					icon: '@',
+					class: '@',
+					placeholder: '@'
+				},
+				controller: 'InputCtrl',
+				templateUrl: '/components/inputText/inputText.html'
 			};
 		})
+		.controller('InputCtrl', ['$scope', function($scope) {
+			
+		}]);
 })();
