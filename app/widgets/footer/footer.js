@@ -5,7 +5,7 @@
                 return {
                     restrict: 'E',
                     replace: true,
-                    controller: "FooterCtrl",
+                    // controller: "FooterCtrl",
                     templateUrl: "/widgets/footer/footer.html"
                 };
             }

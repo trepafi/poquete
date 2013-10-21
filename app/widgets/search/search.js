@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-	angular.module('lt.widgets.search', [])
+	angular.module('lt.widgets.search', ['lt.services.plansSvc'])
 	    .directive('ltSearch', [ function () {
 	            return {
 	                restrict: 'E',
@@ -10,8 +10,13 @@
 	            };
 	        }
 	    ])
-	    .controller('SearchCtrl', ['$scope', function($scope) {
+	    .controller('SearchCtrl', ['$scope', 'plansSvc', function($scope, plansSvc) {
 	    	$scope.plans = [];
 	    	$scope.total = 30;
+
+	    	plansSvc.getAll().then(function(result) {
+	    		console.log(result);
+	    		$scope.plans = result;
+	    	});
 	    }]);
 })();

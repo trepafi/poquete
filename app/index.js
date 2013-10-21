@@ -4,7 +4,7 @@
         window['lt'] = {};
     }
 
-    angular.module('lt', ['ngRoute', 'lt.widgets', 'lt.components'])
+    angular.module('lt', ['ngRoute', 'lt.widgets', 'lt.components', 'lt.services'])
         .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
             var routes = [
                 

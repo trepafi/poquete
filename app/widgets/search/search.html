@@ -27,37 +27,9 @@
 
 			<div class="search-results-container">
 				<table class="search-results">
-					<tr class="white-row">
-						<td class="icon-field"><img src="img/icon-meeting.png" /></td>
-						<td class="text-field"><a href="#">Patinaje por el Retiro</a></td>
-					</tr>
-					<tr>
-						<td class="icon-field"><img src="img/icon-alone.png" /></td>
-						<td class="text-field"><a href="#">Exposición de fotografía</a></td>
-					</tr>
-					<tr class="white-row">
+					<tr ng-repeat="plan in plans" ng-class="{'white-row': $odd}">
 						<td class="icon-field"><img src="img/icon-meeting.png" /></td>
 						<td class="text-field"><a href="#">Degustación de pinchitos</a></td>
-					</tr>
-					<tr>
-						<td class="icon-field"><img src="img/icon-discount.png" /></td>
-						<td class="text-field"><a href="#">Obra de teatro</a></td>
-					</tr>
-					<tr class="white-row">
-						<td class="icon-field"><img src="img/icon-meeting.png" /></td>
-						<td class="text-field"><a href="#">Noche de salsa y copas</a></td>
-					</tr>
-					<tr>
-						<td class="icon-field"><img src="img/icon-discount.png" /></td>
-						<td class="text-field"><a href="#">Obra de teatro</a></td>
-					</tr>
-					<tr class="white-row">
-						<td class="icon-field"><img src="img/icon-meeting.png" /></td>
-						<td class="text-field"><a href="#">Noche de salsa y copas</a></td>
-					</tr>
-					<tr>
-						<td class="icon-field"><img src="img/icon-discount.png" /></td>
-						<td class="text-field"><a href="#">Obra de teatro</a></td>
 					</tr>
 				</table>
 			</div>

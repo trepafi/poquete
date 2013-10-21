@@ -238,6 +238,16 @@ module.exports = function(grunt) {
                         filter: 'isFile'
                     }
                 ]
+            },
+            mocks: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= poquete.app %>/mocks',
+                        src: ['**'],
+                        dest: '<%= poquete.dist %>/mocks/'
+                    }
+                ]
             }
         },
         template: {
