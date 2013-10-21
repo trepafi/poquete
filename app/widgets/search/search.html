@@ -10,7 +10,7 @@
 			</div>
 
 			<div class="map-footer">
-				<em class="qty">{{total}}</em>
+				<em class="qty">{{plans.length}}</em>
 				<em> planes localizados en el perímetro</em>
 			</div>
 		</div>
@@ -23,30 +23,21 @@
 				<div class="float-left">
 					<input-text label="Cuándo?" class="" placeholder="" icon="calendar" width="150"></input-text>
 				</div>
+				<div class="clear"></div>
 			</div>
 
-			<div class="search-results-container">
+			<!-- <div class="search-results-container">
 				<table class="search-results">
 					<tr ng-repeat="plan in plans" ng-class="{'white-row': $odd}">
 						<td class="icon-field"><img src="img/icon-meeting.png" /></td>
-						<td class="text-field"><a href="#">Degustación de pinchitos</a></td>
+						<td class="text-field"><a href="#">{{plan.title}}</a></td>
 					</tr>
 				</table>
-			</div>
+			</div> -->
 
 			<div>
-				<div class="pagination float-left">
-					<ul>
-						<li><a href="#">«</a></li>
-						<li class="active"><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#">»</a></li>
-					</ul>
-				</div>
-
+				<pagination></pagination>
+				
 				<div class="advanced-search-button-container float-left">
 					<button class="btn btn-info">
 						<i class="icon-white icon-cog"></i> Búsqueda avanzada
