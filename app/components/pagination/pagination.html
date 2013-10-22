@@ -1,9 +1,5 @@
 <ul class="pagination">
-	<li><a href="#">&laquo;</a></li>
-	<li><a href="#">1</a></li>
-	<li><a href="#">2</a></li>
-	<li><a href="#">3</a></li>
-	<li><a href="#">4</a></li>
-	<li><a href="#">5</a></li>
-	<li><a href="#">&raquo;</a></li>
+	<li ng-repeat="page in pages" ng-class="{ 'active': page.active, 'disabled': page.disabled }">
+		<a href="#" ng-click="setPage(page.number)">{{page.symbol ? page.symbol : page.number}}</a>
+	</li>	
 </ul>

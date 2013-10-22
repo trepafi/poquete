@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-	angular.module('lt.widgets.search', ['ui.bootstrap', 'lt.services.plansSvc'])
+	angular.module('lt.widgets.search', ['lt.services.plansSvc'])
 	    .directive('ltSearch', [ function () {
 	            return {
 	                restrict: 'E',
@@ -19,15 +19,6 @@
 	    		$scope.plans = result;
 	    	});
 
-	    	$scope.totalItems = 64;
-			$scope.currentPage = 4;
-			$scope.maxSize = 5;
-
-			$scope.setPage = function (pageNo) {
-				$scope.currentPage = pageNo;
-			};
-
-			$scope.bigTotalItems = 175;
-			$scope.bigCurrentPage = 1;
+	    	
 	    }]);
 })();
