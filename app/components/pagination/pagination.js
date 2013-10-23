@@ -8,9 +8,9 @@
 				scope: {
 					// items: '@',
 					// size: '@',
-					total: '@',
+					total: '=',
 					visible: '@',
-					current: '@'
+					current: '='
 				},
 				controller: 'PaginationCtrl',
 				templateUrl: '/components/pagination/pagination.html'
@@ -18,7 +18,6 @@
 		})
 		.controller('PaginationCtrl', ['$scope', function($scope) {
 			// TODO: Set a limit for visible items
-
 			var calculatePages = function() {
 				var current = parseInt($scope.current),
 					pages = new Array(),
@@ -49,8 +48,9 @@
 			};
 
 			// $scope.total = Math.floor($scope.items / $scope.size) + ($scope.items % $scope.size == 0 ? 0 : 1);
-			$scope.setPage($scope.current);
-
+			$scope.$watch('total', function(value) {
+				$scope.setPage($scope.current);
+			});
 			
 		}]);
 })();

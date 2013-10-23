@@ -90,7 +90,7 @@
 	},
 
 	{
-		"id"   : 10,
+		"id"   : 11,
 		"title": "Clases de cocina en el pleni",
 		"type" : "poquet",
 		"date" : "14/07/2013",
@@ -99,7 +99,7 @@
 	},
 
 	{
-		"id"   : 10,
+		"id"   : 12,
 		"title": "Clases de cocina en el pleni",
 		"type" : "poquet",
 		"date" : "15/07/2013",
@@ -108,7 +108,7 @@
 	},
 
 	{
-		"id"   : 10,
+		"id"   : 13,
 		"title": "Clases de cocina en el pleni",
 		"type" : "poquet",
 		"date" : "16/07/2013",
@@ -117,7 +117,7 @@
 	},
 
 	{
-		"id"   : 10,
+		"id"   : 14,
 		"title": "Clases de cocina en el pleni",
 		"type" : "poquet",
 		"date" : "17/07/2013",
@@ -126,7 +126,7 @@
 	},
 
 	{
-		"id"   : 10,
+		"id"   : 15,
 		"title": "Clases de cocina en el pleni",
 		"type" : "poquet",
 		"date" : "18/07/2013",
@@ -135,7 +135,7 @@
 	},
 
 	{
-		"id"   : 11,
+		"id"   : 16,
 		"title": "Clases de cocina en el pleni",
 		"type" : "poquet",
 		"date" : "19/07/2013",
@@ -144,16 +144,16 @@
 	},
 
 	{
-		"id"   : 12,
+		"id"   : 17,
 		"title": "Clases de cocina en el pleni",
-		"type" : "poquet",
+		"type" : "meeting",
 		"date" : "20/07/2013",
 		"coordinates": "40.444226,-3.588595",
 		"qty"  : 10
 	},
 
 	{
-		"id"   : 13,
+		"id"   : 18,
 		"title": "Clases de cocina en el pleni",
 		"type" : "poquet",
 		"date" : "21/07/2013",
@@ -162,7 +162,7 @@
 	},
 
 	{
-		"id"   : 14,
+		"id"   : 19,
 		"title": "Clases de cocina en el pleni",
 		"type" : "poquet",
 		"date" : "22/07/2013",
@@ -171,16 +171,16 @@
 	},
 
 	{
-		"id"   : 15,
+		"id"   : 20,
 		"title": "Clases de cocina en el pleni",
-		"type" : "poquet",
+		"type" : "meeting",
 		"date" : "23/07/2013",
 		"coordinates": "40.444226,-3.588595",
 		"qty"  : 10
 	},
 
 	{
-		"id"   : 16,
+		"id"   : 21,
 		"title": "Clases de cocina en el pleni",
 		"type" : "poquet",
 		"date" : "24/07/2013",
@@ -189,16 +189,16 @@
 	},
 
 	{
-		"id"   : 17,
+		"id"   : 22,
 		"title": "Clases de cocina en el pleni",
-		"type" : "poquet",
+		"type" : "meeting",
 		"date" : "25/07/2013",
 		"coordinates": "40.448531,-3.594975",
 		"qty"  : 10
 	},
 	
 	{
-		"id"   : 18,
+		"id"   : 23,
 		"title": "Gominolas",
 		"type" : "poquet",
 		"date" : "20/07/2013",

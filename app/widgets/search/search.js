@@ -12,13 +12,31 @@
 	    ])
 	    .controller('SearchCtrl', ['$scope', 'plansSvc', function($scope, plansSvc) {
 	    	$scope.plans = [];
-	    	$scope.total = 30;
+	    	$scope.result = [];
+	    	
+	    	$scope.total = 0;
+	    	$scope.size = 10;
+	    	$scope.current = 1;
+	    	$scope.start = 1;
+	    	$scope.end = $scope.start + $scope.size;
 
 	    	plansSvc.getAll().then(function(result) {
-	    		console.log(result);
 	    		$scope.plans = result;
+	    		$scope.result = result;
+	    		$scope.total = Math.floor($scope.plans.length / $scope.size) + ($scope.plans.length % $scope.size == 0 ? 0 : 1);
+	    		// console.log($scope.plans.length);
 	    	});
 
-	    	
+	    	var paginate = function(page) {
+	    		var s = $scope.size;
+	    		$scope.start = (page - 1) * s,
+	    		$scope.end = $scope.start + s;
+	    	};
+
+	    	$scope.$watch('current', function(page) {
+	    		paginate(page);
+	    	})
+
+
 	    }]);
 })();
