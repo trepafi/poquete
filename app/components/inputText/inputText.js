@@ -10,7 +10,8 @@
 					label: '@',
 					icon: '@',
 					class: '@',
-					placeholder: '@'
+					placeholder: '@',
+					model: '='
 				},
 				controller: 'InputCtrl',
 				templateUrl: '/components/inputText/inputText.html'

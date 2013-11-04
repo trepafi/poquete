@@ -18,31 +18,34 @@
 		<div class="search-container">
 			<div>
 				<div class="float-left">
-					<input-text label="Qué?" class="" placeholder="" icon="search" width="150"></input-text>
+					<input-text label="Qué?" class="" placeholder="" icon="search" width="150" model="data.what"></input-text>
 				</div>
 				<div class="float-left">
-					<input-text label="Cuándo?" class="" placeholder="" icon="calendar" width="150"></input-text>
+					<input-text label="Cuándo?" class="" placeholder="" icon="calendar" width="150" model="data.when"></input-text>
 				</div>
 				<div class="clear"></div>
 			</div>
+
+			<div>
+				<pagination total-items="pages.total" page="pages.current" boundary-links="true" rotate="false" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+				<!-- <div class="advanced-search-button-container float-left">
+					<button class="btn btn-info">
+						<i class="icon-white icon-cog"></i> Búsqueda avanzada
+					</button>
+				</div> -->
+			</div>
+
 			<div class="search-results-container">
 				<table class="search-results">
-					<tr ng-repeat="plan in result" ng-class="{'white-row': $odd}" ng-show="start <= $index && $index < end">
-						<!-- ng-show="start < $index && $index < end" -->
+					<tr ng-repeat="plan in result" ng-class="{'white-row': $odd}" ng-show="pages.start <= $index && $index < pages.end">
 						<td class="icon-field"><img src="img/icon-{{plan.type == 'poquet' ? 'alone' : 'meeting'}}.png" /></td>
-						<td class="text-field"><a href="#">{{plan.title}} {{plan.type}}</a></td>
+						<td class="text-field"><a href="#">{{plan.title}}</a></td>
+						<td class="text-field"><a href="#">{{plan.date}}</a></td>
 					</tr>
 				</table>
 			</div>
 
-			<div>
-				<pagination total="total" current="current"></pagination>
-				<div class="advanced-search-button-container float-left">
-					<button class="btn btn-info">
-						<i class="icon-white icon-cog"></i> Búsqueda avanzada
-					</button>
-				</div>
-			</div>
+			
 
 		</div>
 		<div class="clear"></div>

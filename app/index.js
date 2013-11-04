@@ -23,15 +23,6 @@
         }])
         .controller('mainCtrl', function() {
             console.log('Main');
-        })
-        // .directive('tabsAbc', function() {
-        //     return {
-        //         restrict: 'E',
-        //         transclude: true,
-        //         scope: {},
-        //         template: "<div>TABS</div>"
-        //     };
-        // })
+        })        
         ;
-
 }());

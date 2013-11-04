@@ -1,5 +1,7 @@
-<ul class="pagination">
-	<li ng-repeat="page in pages" ng-class="{ 'active': page.active, 'disabled': page.disabled }">
-		<a href="#" ng-click="setPage(page.number)">{{page.symbol ? page.symbol : page.number}}</a>
-	</li>	
-</ul>
+<div>
+	<ul class="pagination" ng-show="pages.total > 1">
+		<li ng-repeat="page in items" ng-class="{ 'active': page.active, 'disabled': page.disabled }">
+			<a href="#" ng-click="setPage(page.number)">{{page.symbol ? page.symbol : page.number}}</a>
+		</li>	
+	</ul>
+</div>

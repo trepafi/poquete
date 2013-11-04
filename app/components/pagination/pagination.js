@@ -1,16 +1,12 @@
 (function () {
     'use strict';
 	angular.module('lt.components.pagination', [])
-		.directive('pagination', function() {
+		.directive('ltPagination', function() {
 			return {
 				restrict: 'E',
 				replace: true,
 				scope: {
-					// items: '@',
-					// size: '@',
-					total: '=',
-					visible: '@',
-					current: '='
+					pages: '='
 				},
 				controller: 'PaginationCtrl',
 				templateUrl: '/components/pagination/pagination.html'
@@ -18,17 +14,18 @@
 		})
 		.controller('PaginationCtrl', ['$scope', function($scope) {
 			// TODO: Set a limit for visible items
-			var calculatePages = function() {
-				var current = parseInt($scope.current),
-					pages = new Array(),
+			var updatePages = function() {
+				var current = $scope.pages.current,
+					total = $scope.pages.total,
+					items = new Array(),
 					previous = current - 1 < 1 ? 1 : current - 1,
-					next = current + 1 > $scope.total ? $scope.total : current + 1;
+					next = current + 1 > total ? total : current + 1;
+			
+				items.push({ 'number': 1, 'symbol': '«', 'active': false, 'disabled': false });
+				items.push({ 'number': previous, 'symbol': '‹', 'active': false, 'disabled': false });
 
-				pages.push({ 'number': 1, 'symbol': '«', 'active': false, 'disabled': false });
-				pages.push({ 'number': previous, 'symbol': '‹', 'active': false, 'disabled': false });
-
-				for(var i = 1; i <= $scope.total; i++) {
-					pages.push( {
+				for(var i = 1; i <= total; i++) {
+					items.push( {
 						'symbol': '',
 						'number': i,
 						'active': current == i,
@@ -36,20 +33,24 @@
 					})
 				}
 
-				pages.push({ 'number': next, 'symbol': '›', 'active': false, 'disabled': false });
-				pages.push({ 'number': $scope.total, 'symbol': '»', 'active': false, 'disabled': false });
+				items.push({ 'number': next, 'symbol': '›', 'active': false, 'disabled': false });
+				items.push({ 'number': total, 'symbol': '»', 'active': false, 'disabled': false });
 
-				$scope.pages = pages;
+				$scope.items = items;
+
+				console.log('Pagination.js Update Pages');
+				console.log($scope.pages);
+				console.log(current);
+				console.log($scope.items);
 			};
 
 			$scope.setPage = function (page) {
-				$scope.current = page;
-				calculatePages();
+				$scope.pages.current = page;
+				updatePages();
 			};
 
-			// $scope.total = Math.floor($scope.items / $scope.size) + ($scope.items % $scope.size == 0 ? 0 : 1);
-			$scope.$watch('total', function(value) {
-				$scope.setPage($scope.current);
+			$scope.$watch('pages.total', function(value, oldValue) {
+				$scope.setPage($scope.pages.current);
 			});
 			
 		}]);
