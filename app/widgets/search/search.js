@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-	angular.module('lt.widgets.search', ['lt.services.plansSvc', 'ui.bootstrap'])
+	angular.module('lt.widgets.search', ['ui.bootstrap', 'lt.services.plansSvc', 'lt.utils.filters'])
 	    .directive('ltSearch', [ function () {
 	            return {
 	                restrict: 'E',
@@ -10,7 +10,7 @@
 	            };
 	        }
 	    ])
-	    .controller('SearchCtrl', ['$scope', 'plansSvc', function($scope, plansSvc) {
+	    .controller('SearchCtrl', ['$scope', '$timeout', 'plansSvc', function($scope, $timeout, plansSvc) {
 	    	$scope.plans = [];
 	    	$scope.result = [];
 	    	
@@ -62,20 +62,24 @@
 	    				add.push(item.title.toLowerCase().indexOf(what) != -1);
 	    			}
 
-	    			if(when == '') {
+	    			// For when
+	    			if(when == null) {
 	    				add.push(true);
 	    			}
 	    			else {
-	    				add.push(item.date == when);
+	    				var dt = item.date.split('/');
+	    				dt = new Date(dt[2], dt[1] - 1, dt[0]).getTime();
+	    				add.push(dt === when.getTime());
 	    			}
 
+	    			// Evaluating response
 	    			var res = true;
 	    			add.forEach(function(item) {
-	    				console.log(item);
+	    				// console.log(item);
 	    				res &= item;
 	    			});
 
-	    			console.log(res);
+	    			// console.log(res);
 	    			return res; 
 	    		});
 	    		
@@ -107,6 +111,24 @@
 	    		}
 	    	});
 
+
+
+	    	// Date object
+	    	$scope.odate = {
+				showWeeks: false,
+				minDate: new Date(), 
+				opened: false,
+				options: {
+					yearFormat: "'yy'",
+					startingDay: 1
+				}
+			}
+
+			$scope.odate.open = function() {
+				$timeout(function() {
+					$scope.odate.opened = true;
+				});
+			};
 
 	    }]);
 })();

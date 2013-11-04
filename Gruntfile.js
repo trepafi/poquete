@@ -11,6 +11,7 @@ module.exports = function(grunt) {
         dist: 'dist',
         npm: 'node_modules',
         bower: 'bower_components',
+        vendors: 'app/vendors',
         indexjs: 'index.js',
         hosts: {
             staging: 'poquete.dev',
@@ -139,8 +140,8 @@ module.exports = function(grunt) {
                     '<%= poquete.bower %>/angular-sanitize/angular-sanitize.js',
                     '<%= poquete.bower %>/angular-translate/angular-translate.js',
                     '<%= poquete.bower %>/angular-i18n/angular-locale_en.js',
-                    '<%= poquete.bower %>/angular-bootstrap/ui-bootstrap.min.js',
-                    '<%= poquete.bower %>/angular-bootstrap/ui-bootstrap-tpls.min.js',
+                    '<%= poquete.vendors %>/angular-bootstrap/ui-bootstrap.js',
+                    '<%= poquete.vendors %>/angular-bootstrap/ui-bootstrap-tpls.js',
                     '<%= poquete.app %>/plugins/*.js'
                 ],
                 dest: '<%= poquete.dist %>/js/vendor.js'
@@ -199,7 +200,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     '<%= poquete.dist %>/css/poquete.min.css': [
-                        '<%= poquete.app %>/vendor/bootstrap/css/*min.css',
+                        '<%= poquete.vendors %>/bootstrap/css/*min.css',
                         '<%= poquete.app %>/css/**/*.css',
                         '<%= poquete.app %>/components/**/*.css',
                         '<%= poquete.app %>/widgets/**/*.css'

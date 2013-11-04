@@ -8,13 +8,18 @@
 .pq-label { color: #278399; font-size: 18px; display: block; margin-bottom: 5px; }
 
 
+.search-input-container { float: left; padding: 0 10px 10px; }
+.search-results-container { height: 440px; }
+
+
+
 /* Colored table */
 table.search-results .white-row { background: #FFF; }
 table.search-results { line-height: 42px; border: 1px solid #97A9AC; padding: 3px; }
 table.search-results td { border: 0; background: none; text-align: left; }
 table.search-results .icon-field { width: 50px; text-align: center; margin-top: -5px; }
 table.search-results .text-field { width: 375px; }
-table.search-results .text-field-2 { width: 130px; }
+table.search-results .date-field { width: 130px; }
 
 .broad { width: 991px; margin:0 auto; position: relative; }
 .header { background: url("../img/header.png"); height: 203px; position: relative; }
@@ -29,10 +34,10 @@ table.search-results .text-field-2 { width: 130px; }
 .map-home { margin: 15px; }
 .map-create-plan { width: 485px; margin-right: 15px; }
 .map-container { float:left; background: #E1EAED; width: 510px; height: 485px; margin: 20px; }
-.map-container .map-title { margin-top: 3px; }
+/*.map-container .map-title { margin-top: 3px; }
 .map-container .map-title .map-title-icon { background: url("../img/map-icon.png"); display: block; float: left; width: 90px; height: 67px; margin-left: -10px; }
 .map-container .map-title .map-title-input { background: url("../img/map-title-background.png") repeat-x; width: 370px; height: 55px; float: left; margin-top: 6px; color: #777 ; padding: 14px 0 0 15px; font-size: 15px; font-weight: bold; }
-.map-container .map-title .map-title-end { display: block; float: left; width: 10px; background: url("../img/map-title-end.png") repeat-x; height: 48px; margin-top: 6px; }
+.map-container .map-title .map-title-end { display: block; float: left; width: 10px; background: url("../img/map-title-end.png") repeat-x; height: 48px; margin-top: 6px; }*/
 .map-container .map-footer { color: #564D26; padding-left: 20px; }
 .map-container .map-footer .qty { font-weight: bold; }
 

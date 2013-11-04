@@ -1,7 +1,7 @@
 <section class="body-container">
 	<div class="body broad">
-		<!-- <div class="map-container">
-			<div class="map-title">
+		<div class="map-container">
+			<div class="search-input-container">
 				<input-text label="Dónde?" class="" placeholder="" icon="map-marker" width="300"></input-text>
 			</div>
 
@@ -13,39 +13,39 @@
 				<em class="qty">{{plans.length}}</em>
 				<em> planes localizados en el perímetro</em>
 			</div>
-		</div> -->
+		</div>
 		
 		<div class="search-container">
 			<div>
-				<div class="float-left">
+				<div class="search-input-container">
 					<input-text label="Qué?" class="" placeholder="" icon="search" width="150" model="data.what"></input-text>
 				</div>
-				<div class="float-left">
-					<input-text label="Cuándo?" class="" placeholder="" icon="calendar" width="150" model="data.when"></input-text>
+				<div class="search-input-container">
+					<span class="pq-label">Cuándo?</span>
+					<input type="text" datepicker-popup="dd/MM/yyyy" ng-model="data.when" is-open="odate.opened" min="odate.minDate" datepicker-options="odate.options" show-weeks="odate.showWeeks"/>
+					<a href="#" ng-click="odate.open()"><i class="icon-calendar"></i></a>
 				</div>
 				<div class="clear"></div>
-			</div>
-
-			<div>
-				<pagination total-items="pages.total" page="pages.current" boundary-links="true" rotate="false" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
-				<!-- <div class="advanced-search-button-container float-left">
-					<button class="btn btn-info">
-						<i class="icon-white icon-cog"></i> Búsqueda avanzada
-					</button>
-				</div> -->
 			</div>
 
 			<div class="search-results-container">
 				<table class="search-results">
 					<tr ng-repeat="plan in result" ng-class="{'white-row': $odd}" ng-show="pages.start <= $index && $index < pages.end">
 						<td class="icon-field"><img src="img/icon-{{plan.type == 'poquet' ? 'alone' : 'meeting'}}.png" /></td>
-						<td class="text-field"><a href="#">{{plan.title}}</a></td>
-						<td class="text-field"><a href="#">{{plan.date}}</a></td>
+						<td class="text-field"><a href="#">{{plan.title|truncate:35}}</a></td>
+						<td class="date-field"><a href="#">{{plan.date}}</a></td>
 					</tr>
 				</table>
 			</div>
 
-			
+			<div>
+				<pagination total-items="pages.total" page="pages.current" boundary-links="true" rotate="false" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+				<div class="advanced-search-button-container float-left">
+					<button class="btn btn-info">
+						<i class="icon-white icon-cog"></i> Búsqueda avanzada
+					</button>
+				</div>
+			</div>
 
 		</div>
 		<div class="clear"></div>
