@@ -1,21 +1,20 @@
 <section class="body-container">
 	<div class="body broad">
-		<div class="map-container">
+		<div class="map-container container-simple-search">
 			<div class="search-input-container">
 				<input-text label="Dónde?" class="" placeholder="" icon="map-marker" width="300"></input-text>
 			</div>
 
-			<div class="map-border map-home clear">
-				<img src="img/map.png" />
+			<div class="map-border">
+				<google-map id="map.id" markers="map.markers" center="map.center" class="map-simple-search"></google-map>
 			</div>
-
-			<div class="map-footer">
-				<em class="qty">{{plans.length}}</em>
-				<em> planes localizados en el perímetro</em>
+			
+			<div>
+				{{plans.length}} <em> planes localizados en el perímetro</em>
 			</div>
 		</div>
 		
-		<div class="search-container">
+		<div class="search-container container-simple-search">
 			<div>
 				<div class="search-input-container">
 					<input-text label="Qué?" class="" placeholder="" icon="search" width="150" model="data.what"></input-text>
@@ -39,7 +38,9 @@
 			</div>
 
 			<div>
-				<pagination total-items="pages.total" page="pages.current" boundary-links="true" rotate="false" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+				<div class="pagination-simple-search">
+					<pagination total-items="pages.total" page="pages.current" boundary-links="true" rotate="false" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+				</div>
 				<div class="advanced-search-button-container float-left">
 					<button class="btn btn-info">
 						<i class="icon-white icon-cog"></i> Búsqueda avanzada
@@ -48,7 +49,6 @@
 			</div>
 
 		</div>
-		<div class="clear"></div>
 
 	</div>
 </section>

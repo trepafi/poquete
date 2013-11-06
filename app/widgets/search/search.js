@@ -30,13 +30,13 @@
 	    		where: ""
 	    	};
 
+	    	/* Pagination */
 	    	$scope.pagination = {
 	    		total: 40,
 	    		current: 2
 	    	};
 
 	    	var calculatePages = function() {
-	    		// $scope.pages.total = Math.floor($scope.result.length / $scope.pages.size) + ($scope.result.length % $scope.pages.size == 0 ? 0 : 1)
 	    		$scope.pages.total = $scope.result.length;
 	    		$scope.pages.current = 1;
 	    	};
@@ -47,6 +47,33 @@
 	    		$scope.pages.end = $scope.pages.start + s;
 	    	};
 
+	    	$scope.$watch('pages.current', function(value, oldValue) {
+	    		if(value !== oldValue) {
+	    			setPage(value);
+	    		}
+	    	});
+
+	    	$scope.$watch('data.what', function(value, oldValue) {
+	    		if(value !== oldValue) {
+	    			$scope.filter();
+	    		}
+	    	});
+
+	    	$scope.$watch('data.when', function(value, oldValue) {
+	    		if(value !== oldValue) {
+	    			$scope.filter();
+	    		}
+	    	});
+
+	    	/* Getting data */
+	    	plansSvc.getAll().then(function(result) {
+	    		$scope.plans = result;
+	    		$scope.result = result;
+	    		calculatePages();
+	    		getMarkers();
+	    	});
+
+	    	/* Filtering data */
 	    	$scope.filter = function() {
 	    		console.log('Filtering');
 	    		var result = [];
@@ -87,33 +114,7 @@
 	    		calculatePages();
 	    	};
 
-	    	plansSvc.getAll().then(function(result) {
-	    		$scope.plans = result;
-	    		$scope.result = result;
-	    		calculatePages();
-	    	});
-
-	    	$scope.$watch('pages.current', function(value, oldValue) {
-	    		if(value !== oldValue) {
-	    			setPage(value);
-	    		}
-	    	});
-
-	    	$scope.$watch('data.what', function(value, oldValue) {
-	    		if(value !== oldValue) {
-	    			$scope.filter();
-	    		}
-	    	});
-
-	    	$scope.$watch('data.when', function(value, oldValue) {
-	    		if(value !== oldValue) {
-	    			$scope.filter();
-	    		}
-	    	});
-
-
-
-	    	// Date object
+	    	/* Date object */
 	    	$scope.odate = {
 				showWeeks: false,
 				minDate: new Date(), 
@@ -129,6 +130,23 @@
 					$scope.odate.opened = true;
 				});
 			};
+
+			/* Maps */
+			$scope.map = {
+				id: 'search-map',
+				markers: [],
+				center: {
+					x: 0,
+					y: 0
+				}
+			}
+
+			var getMarkers = function() {
+				$scope.map.markers = $scope.result.map(function(item) {
+					return item.coordinates;
+				});
+			};
+
 
 	    }]);
 })();

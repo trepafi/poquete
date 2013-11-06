@@ -142,6 +142,7 @@ module.exports = function(grunt) {
                     '<%= poquete.bower %>/angular-i18n/angular-locale_en.js',
                     '<%= poquete.vendors %>/angular-bootstrap/ui-bootstrap.js',
                     '<%= poquete.vendors %>/angular-bootstrap/ui-bootstrap-tpls.js',
+                    '<%= poquete.vendors %>/marker-clusterer/marker-clusterer.js',
                     '<%= poquete.app %>/plugins/*.js'
                 ],
                 dest: '<%= poquete.dist %>/js/vendor.js'
