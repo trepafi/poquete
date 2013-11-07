@@ -70,7 +70,7 @@
 	    		$scope.plans = result;
 	    		$scope.result = result;
 	    		calculatePages();
-	    		getMarkers();
+	    		getCoordinates();
 	    	});
 
 	    	/* Filtering data */
@@ -141,8 +141,8 @@
 				}
 			}
 
-			var getMarkers = function() {
-				$scope.map.markers = $scope.result.map(function(item) {
+			var getCoordinates = function() {
+				$scope.map.coordinates = $scope.result.map(function(item) {
 					return item.coordinates;
 				});
 			};

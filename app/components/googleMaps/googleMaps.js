@@ -7,7 +7,7 @@
 				replace: true,
 				scope: {
 					center: "=center", // required
-					markers: "=markers", // optional
+					coordinates: "=coordinates", // optional
 					latitude: "=latitude", // required
 					longitude: "=longitude", // required
 					zoom: "=zoom", // required
@@ -32,9 +32,10 @@
 				$scope.map = new google.maps.Map($scope.element, $scope.options);
 			};
 
-			$scope.$watch('markers', function(value) {
-				if (value.length > 0) {
-					$scope.coordinates = value.map(function(item) {
+			$scope.$watch('coordinates', function(value) {
+				var markers = [];
+				if (value && value.length > 0) {
+					$scope.markers = value.map(function(item) {
 						return new google.maps.Marker({
 	                        position: stringToCoordinates(item),
 	                        map: $scope.map,
@@ -47,7 +48,7 @@
 	                    });
 					});
 
-					createMarkerClusterer($scope.map, $scope.coordinates);
+					createMarkerClusterer($scope.map, $scope.markers);
 				};
 			});
 
@@ -58,6 +59,7 @@
 		}]);
 
 	var stringToCoordinates = function(s) {
+		console.log(s);
 		var coordinates = s.split(',');
 	    if (!coordinates) return null;
 	    return new google.maps.LatLng(coordinates[0], coordinates[1]);
@@ -92,11 +94,11 @@
         console.log(map);
         console.log(markers);
 
-	        var mc = new MarkerClusterer(map, markers, {
-	            gridSize: 50,
-	            maxZoom: 15,
-	            styles: clusterStyles
-	        });
+        var mc = new MarkerClusterer(map, markers, {
+            gridSize: 50,
+            maxZoom: 15,
+            styles: clusterStyles
+        });
 	};
 
 		

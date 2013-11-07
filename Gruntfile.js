@@ -350,7 +350,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
 
     grunt.initConfig(gruntConfig);
-    grunt.registerTask('vendor', ['concat:vendor', 'uglify:vendor']);
+    grunt.registerTask('vendor', ['concat:vendor']);
+    // grunt.registerTask('vendor', ['concat:vendor', 'uglify:vendor']);
     grunt.registerTask('scripts', ['ngtemplates', 'ngmodules', 'concat:config', 'concat:events', 'concat:app', 'concat:ie', 'uglify:app', 'uglify:ie', 'clean:temp']);
     grunt.registerTask('styles', ['cssmin']);
 
