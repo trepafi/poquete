@@ -23,7 +23,7 @@
 		})
 		.controller('GoogleMapCtrl', ['$scope', function($scope) {
 			$scope.options = {
-				zoom: 2,
+				zoom: 10,
 				center: new google.maps.LatLng($scope.center.x, $scope.center.y),
                 mapTypeId: google.maps.MapTypeId.ROADMAP
 			};
@@ -34,9 +34,11 @@
 
 			$scope.$watch('coordinates', function(value) {
 				var markers = [];
+				var sum = { x: 0, y: 0 };
+
 				if (value && value.length > 0) {
 					$scope.markers = value.map(function(item) {
-						return new google.maps.Marker({
+						var mk = new google.maps.Marker({
 	                        position: stringToCoordinates(item),
 	                        map: $scope.map,
 	                        title: "title lt."
@@ -44,10 +46,16 @@
 	                        // icon: {
 	                        //     path: that.frontPath + 'img/tennis-court.ico',
 	                        //     scale: 10
-	                        // },
+	                        // },	
 	                    });
+						var point = item.split(',');
+						sum.x += parseFloat(point[0]);
+						sum.y += parseFloat(point[1]);
+						return mk;
 					});
 
+					$scope.center = [ sum.x / value.length, sum.y / value.length ];
+					$scope.map.setCenter( new google.maps.LatLng($scope.center[0], $scope.center[1]) );
 					createMarkerClusterer($scope.map, $scope.markers);
 				};
 			});
@@ -91,8 +99,8 @@
             }
         ];
 
-        console.log(map);
-        console.log(markers);
+        // console.log(map);
+        // console.log(markers);
 
         var mc = new MarkerClusterer(map, markers, {
             gridSize: 50,
