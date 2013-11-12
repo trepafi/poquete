@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-	angular.module('lt.widgets.search', ['ui.bootstrap', 'lt.services.plansSvc', 'lt.utils.filters'])
+	angular.module('lt.widgets.search', ['ui.bootstrap', 'lt.services.plansSvc', 'lt.utils.filters', 'lt.components'])
 	    .directive('ltSearch', [ function () {
 	            return {
 	                restrict: 'E',
@@ -10,7 +10,7 @@
 	            };
 	        }
 	    ])
-	    .controller('SearchCtrl', ['$scope', '$timeout', 'plansSvc', function($scope, $timeout, plansSvc) {
+	    .controller('SearchCtrl', ['$scope', '$timeout', 'plansSvc', 'G', 'ltMaps', function($scope, $timeout, plansSvc, G, maps) {
 	    	$scope.plans = [];
 	    	$scope.result = [];
 	    	
@@ -65,6 +65,12 @@
 	    		}
 	    	});
 
+	    	$scope.$watch('data.where', function(value, oldValue) {
+	    		if(value !== oldValue) {
+	    			$scope.filter();
+	    		}
+	    	});
+
 	    	/* Getting data */
 	    	plansSvc.getAll().then(function(result) {
 	    		$scope.plans = result;
@@ -80,6 +86,7 @@
 	    		result = $scope.plans.filter(function(item) {
 	    			var what = $scope.data.what.toLowerCase(),
 	    				when = $scope.data.when,
+	    				where = $scope.data.where,
 	    				add = [];
 	    			// For what
 	    			if(what == '' || what.length < 3) {
@@ -90,13 +97,24 @@
 	    			}
 
 	    			// For when
-	    			if(when == null) {
+	    			if(when == null || when == "") {
 	    				add.push(true);
 	    			}
 	    			else {
 	    				var dt = item.date.split('/');
-	    				dt = new Date(dt[2], dt[1] - 1, dt[0]).getTime();
-	    				add.push(dt === when.getTime());
+	    				dt = new Date(dt[2], dt[1] - 1, dt[0]);
+	    				add.push(dt.getTime() === when.getTime());
+	    			}
+
+	    			// For where
+	    			if(where == null) {
+	    				add.push(true);
+	    			}
+	    			else {
+	    				var c = maps.stringToCoordinates(item.coordinates);
+	    				var cd = G.maps.geometry.spherical.computeDistanceBetween (where.location, c);
+	    				console.log(cd <= 3000);
+	    				add.push(cd <= 3000);
 	    			}
 
 	    			// Evaluating response
@@ -146,6 +164,8 @@
 					return item.coordinates;
 				});
 			};
+
+			
 
 
 	    }]);

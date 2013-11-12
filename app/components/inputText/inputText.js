@@ -1,17 +1,17 @@
 (function () {
     'use strict';
 	angular.module('lt.components.inputText', [])
-		.directive('inputText', function() {
+		.directive('ltInputText', function() {
 			return {
 				restrict: 'E',
 				replace: true,
 				scope: {
-					width: '@',
+					model: '=',
 					label: '@',
+					inputClass: '@',
+					width: '@',
 					icon: '@',
-					class: '@',
-					placeholder: '@',
-					model: '='
+					placeholder: '@'
 				},
 				controller: 'InputCtrl',
 				templateUrl: '/components/inputText/inputText.html'

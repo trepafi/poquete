@@ -3018,6 +3018,7 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position', 'ui.bootstrap
   return {
     require:'ngModel',
     link:function (originalScope, element, attrs, modelCtrl) {
+      console.log(attrs);
 
       //SUPPORTED ATTRIBUTES (OPTIONS)
 

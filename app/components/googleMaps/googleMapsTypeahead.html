@@ -1,0 +1,5 @@
+<div>
+	<span class="pq-label" ng-if="label">{{label}} {{items.length}}</span>
+	<input type="text" ng-model="input" typeahead="item as item.label for item in items | limitTo:8" 
+	typeahead-loading="{{items}}" class="{{inputClass}}" typeahead-on-select="select($item, $model, $label)" typeahead-wait-ms="700">
+</div>

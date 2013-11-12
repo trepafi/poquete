@@ -2,11 +2,11 @@
 	<div class="body broad">
 		<div class="map-container container-simple-search">
 			<div class="search-input-container">
-				<input-text label="Dónde?" class="" placeholder="" icon="map-marker" width="300"></input-text>
+				<lt-gm-typeahead label="Dónde?" model="data.where" inputClass=""></lt-gm-typeahead>
 			</div>
 
 			<div class="map-border">
-				<google-map id="map.id" coordinates="map.coordinates" center="map.center" class="map-simple-search"></google-map>
+				<lt-google-map id="map.id" coordinates="map.coordinates" center="map.center" class="map-simple-search"></lt-google-map>
 			</div>
 			
 			<div>
@@ -17,12 +17,10 @@
 		<div class="search-container container-simple-search">
 			<div>
 				<div class="search-input-container">
-					<input-text label="Qué?" class="" placeholder="" icon="search" width="150" model="data.what"></input-text>
+					<lt-input-text label="Qué?" placeholder="" icon="search" width="150" model="data.what" inputClass=""></lt-input-text>
 				</div>
 				<div class="search-input-container">
-					<span class="pq-label">Cuándo?</span>
-					<input type="text" datepicker-popup="dd/MM/yyyy" ng-model="data.when" is-open="odate.opened" min="odate.minDate" datepicker-options="odate.options" show-weeks="odate.showWeeks"/>
-					<a href="#" ng-click="odate.open()"><i class="icon-calendar"></i></a>
+					<lt-datepicker label="Cuándo?" model="data.when" odate="odate" inputClass=""></lt-datepicker>
 				</div>
 				<div class="clear"></div>
 			</div>
