@@ -22,6 +22,7 @@
 			};
 		})
 		.controller('GoogleMapCreateCtrl', ['$scope', 'G', 'ltMaps', function($scope, G, maps) {
+			$scope.markers = null;
 			$scope.options = {
 				zoom: 10,
 				center: new G.maps.LatLng($scope.center.x, $scope.center.y),
@@ -32,11 +33,21 @@
 				$scope.map = new G.maps.Map($scope.element, $scope.options);
 			};
 
+			var cleanMarkers = function() {
+				if($scope.markers != null) {
+					$scope.markers.map(function(item) {
+						item.setMap(null);
+					});
+					$scope.clusterer.clearMarkers();
+				}
+			};
+
 			$scope.$watch('coordinates', function(value) {
 				var markers = [];
 				var sum = { x: 0, y: 0 };
 
 				if (value && value.length > 0) {
+					cleanMarkers();
 					$scope.markers = value.map(function(item) {
 						var mk = new G.maps.Marker({
 	                        position: maps.stringToCoordinates(item),
@@ -55,7 +66,7 @@
 
 					$scope.center = [ sum.x / value.length, sum.y / value.length ];
 					$scope.map.setCenter( new G.maps.LatLng($scope.center[0], $scope.center[1]) );
-					maps.createMarkerClusterer($scope.map, $scope.markers);
+					$scope.clusterer = maps.createMarkerClusterer($scope.map, $scope.markers);
 				};
 			});
 

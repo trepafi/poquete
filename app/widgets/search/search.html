@@ -10,7 +10,7 @@
 			</div>
 			
 			<div>
-				{{plans.length}} <em> planes localizados en el perímetro</em>
+				{{result.length}} <em> planes localizados en el perímetro</em>
 			</div>
 		</div>
 		
@@ -33,10 +33,11 @@
 						<td class="date-field"><a href="#">{{plan.date}}</a></td>
 					</tr>
 				</table>
+				<div ng-show="result.length == 0">No hemos podido encontrar planes con los criterios que buscabas</div>
 			</div>
 
 			<div>
-				<div class="pagination-simple-search">
+				<div class="pagination-simple-search" ng-show="result.length > pages.size">
 					<pagination total-items="pages.total" page="pages.current" boundary-links="true" rotate="false" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
 				</div>
 				<div class="advanced-search-button-container float-left">

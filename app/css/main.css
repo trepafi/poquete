@@ -35,7 +35,7 @@ table.search-results .date-field { width: 130px; }
 .map-border { border: 5px solid white; }
 .map-simple-search { height: 450px; }
 .search-input-container { display: table-cell; padding: 0 10px 10px 0; }
-.search-results-container { height: 440px; }
+.search-results-container { height: 440px; width: 455px; }
 .advanced-search-button-container { margin: 20px 0 0 25px; float: left; }
 
 

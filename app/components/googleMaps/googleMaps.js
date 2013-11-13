@@ -40,6 +40,8 @@
                         maxZoom: 15,
                         styles: clusterStyles
                     });
+
+                    return mc;
                 }
         	}
         }]);  

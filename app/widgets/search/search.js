@@ -47,6 +47,61 @@
 	    		$scope.pages.end = $scope.pages.start + s;
 	    	};
 
+	    	/* Filtering data */
+	    	$scope.filter = function() {
+	    		// console.log('Filtering');
+	    		var result = [];
+	    		result = $scope.plans.filter(function(item) {
+	    			var what = $scope.data.what.toLowerCase(),
+	    				when = $scope.data.when,
+	    				where = $scope.data.where,
+	    				add = [];
+
+	    			// For what
+	    			if(what == '' || what.length < 3) {
+	    				add.push(true);
+	    			}
+	    			else {
+	    				add.push(item.title.toLowerCase().indexOf(what) != -1);
+	    			}
+
+	    			// For when
+	    			if(when == null || when == "") {
+	    				add.push(true);
+	    			}
+	    			else {
+	    				var dt = item.date.split('/');
+	    				dt = new Date(dt[2], dt[1] - 1, dt[0]);
+	    				add.push(dt.getTime() === when.getTime());
+	    			}
+
+	    			// For where
+	    			if(where == null || where == "") {
+	    				add.push(true);
+	    			}
+	    			else {
+	    				var c = maps.stringToCoordinates(item.coordinates);
+	    				var cd = G.maps.geometry.spherical.computeDistanceBetween (where.location, c);
+	    				console.log(cd <= 3000);
+	    				add.push(cd <= 3000);
+	    			}
+
+	    			// Evaluating response
+	    			var res = true;
+	    			add.forEach(function(item) {
+	    				// console.log(item);
+	    				res &= item;
+	    			});
+
+	    			// console.log(res);
+	    			return res; 
+	    		});
+	    		
+	    		$scope.result = result;
+	    		calculatePages();
+	    		getCoordinates();
+	    	};
+
 	    	$scope.$watch('pages.current', function(value, oldValue) {
 	    		if(value !== oldValue) {
 	    			setPage(value);
@@ -78,59 +133,6 @@
 	    		calculatePages();
 	    		getCoordinates();
 	    	});
-
-	    	/* Filtering data */
-	    	$scope.filter = function() {
-	    		console.log('Filtering');
-	    		var result = [];
-	    		result = $scope.plans.filter(function(item) {
-	    			var what = $scope.data.what.toLowerCase(),
-	    				when = $scope.data.when,
-	    				where = $scope.data.where,
-	    				add = [];
-	    			// For what
-	    			if(what == '' || what.length < 3) {
-	    				add.push(true);
-	    			}
-	    			else {
-	    				add.push(item.title.toLowerCase().indexOf(what) != -1);
-	    			}
-
-	    			// For when
-	    			if(when == null || when == "") {
-	    				add.push(true);
-	    			}
-	    			else {
-	    				var dt = item.date.split('/');
-	    				dt = new Date(dt[2], dt[1] - 1, dt[0]);
-	    				add.push(dt.getTime() === when.getTime());
-	    			}
-
-	    			// For where
-	    			if(where == null) {
-	    				add.push(true);
-	    			}
-	    			else {
-	    				var c = maps.stringToCoordinates(item.coordinates);
-	    				var cd = G.maps.geometry.spherical.computeDistanceBetween (where.location, c);
-	    				console.log(cd <= 3000);
-	    				add.push(cd <= 3000);
-	    			}
-
-	    			// Evaluating response
-	    			var res = true;
-	    			add.forEach(function(item) {
-	    				// console.log(item);
-	    				res &= item;
-	    			});
-
-	    			// console.log(res);
-	    			return res; 
-	    		});
-	    		
-	    		$scope.result = result;
-	    		calculatePages();
-	    	};
 
 	    	/* Date object */
 	    	$scope.odate = {

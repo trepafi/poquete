@@ -49,6 +49,10 @@
 				if(value.length > 3) {
 					debounced(value);
 				}
+
+				if(value.length == 0) {
+					$scope.model = "";
+				}
 			});
 
 			$scope.select = function($item, $model, $label) {
