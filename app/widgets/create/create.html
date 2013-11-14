@@ -1,0 +1,136 @@
+<section class="body-container">
+	<div class="body broad">
+		<div class="fields-container title-form-container">
+			<div class="title-form">
+				<span class="pq-label">Nuevo Plan</span>
+			</div>
+			<div class="line"></div>
+			<div class="clear"></div>
+		</div>
+
+		<div class="fields-container">
+			<div class="field-container float-left">
+				<span class="pq-label">Título del plan</span>
+				<input type="text" class="input-w8" />
+			</div>
+
+			<div class="field-container float-left">
+				<span class="pq-label">Fecha</span>
+				<input type="text" class="input-w4" />
+			</div>
+
+			<div class="field-container float-left">
+				<span class="pq-label">Hora</span>
+				<input type="text" class="input-w4" />
+			</div>
+			
+			<div class="field-container float-left">
+				<span class="pq-label">Se repite?</span>
+				<label for="repeat-yes" class="float-left label-plan-type">
+					<input type="checkbox" name="repeat-yes" id="repeat-yes" />
+					Si <a href="#"><em>(Config)</em></a>
+				</label>
+				<label for="repeat-no" class="float-left label-plan-type">
+					<input type="checkbox" name="repeat-no" id="repeat-no" />
+					No
+				</label>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+		<div class="fields-container">
+			<div class="field-container float-left">
+				<span class="pq-label">Punto de encuentro</span>
+				<input type="text" class="input-w8" />
+			</div>
+
+			<div class="field-container">
+				<span class="pq-label">Tipo</span>
+				<label for="type-alone" class="float-left label-plan-type">
+					<input type="checkbox" name="type-alone" id="type-alone" />
+					<img src="img/icon-alone.png" />
+				</label>
+				<label for="type-meeting" class="float-left label-plan-type">
+					<input type="checkbox" name="type-meeting" id="type-meeting" />
+					<img src="img/icon-meeting.png" />
+				</label>
+				<label for="type-discount" class="float-left label-plan-type">
+					<input type="checkbox" name="type-discount" id="type-discount" />
+					<img src="img/icon-discount.png" />
+				</label>
+			</div>
+
+			<div class="field-container float-left">
+				<span class="pq-label">Categoría</span>
+				<select class="input-w7">
+					<option>A</option>
+					<option>B</option>
+					<option>C</option>
+					<option>D</option>
+				</select>
+			</div>
+			<div class="clear"></div>
+		</div>
+		
+		<div class="fields-container">
+			<div class="map-border map-create-plan float-left">
+				<img src="img/map3.png" />
+			</div>
+			<div class="field-container float-left">
+				<span class="pq-label">Descripción</span>
+				<div class="textarea-container">
+					<textarea class="desc"></textarea>
+				</div>
+				<div class="char-counter">25 caracteres</div>
+			</div>
+			<div class="field-container suscriptions-container float-left">
+				<span class="pq-label">Aceptar automáticamente suscripciones?</span>
+				<label for="repeat-yes" class="float-left label-plan-type">
+					<input type="checkbox" name="repeat-yes" id="repeat-yes" />
+					Si
+				</label>
+				<label for="repeat-no" class="float-left label-plan-type">
+					<input type="checkbox" name="repeat-no" id="repeat-no" />
+					No, ya decidiré a quién admito
+				</label>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+		<div class="fields-container">
+			<div class="field-container float-left">
+				<span class="pq-label">Imágenes del Plan</span>
+				<div class="add-images-container map-border">
+					<div class="img-cam float-left">
+						<img src="img/cam.png" />
+					</div>
+				</div>
+			</div>
+			<div class="field-container float-left">
+				<span class="pq-label">Observaciones privadas</span>
+				<div class="textarea-container">
+					<textarea class="private-obs"></textarea>
+				</div>
+				<div class="char-counter">25 caracteres</div>
+			</div>
+			<div class="field-container plan-cost-container float-left">
+				<span class="pq-label">Coste aprox.</span>
+				<div class="map-border plan-cost float-left">
+					<span class="pq-label">23.00</span>
+					<span class="">Euros</span>
+				</div>
+			</div>
+
+			<div class="clear"></div>
+		</div>
+
+		<div class="fields-container preview-button-container">
+			<button class="btn btn-info">
+				Visualizar Plan
+				<i class="icon-white icon-search"></i>
+			</button>
+		</div>
+
+		<div class="clear"></div>
+	</div>
+</div>
