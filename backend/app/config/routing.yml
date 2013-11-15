@@ -1,0 +1,4 @@
+poquete_api:
+    resource: "@PoqueteAPIBundle/Resources/config/routing.yml"
+    prefix:   /
+
