@@ -1,7 +1,16 @@
-parameters:
+#parameters:
 #    poquete_api.example.class: Poquete\APIBundle\Example
 
-services:
+#services:
 #    poquete_api.example:
 #        class: %poquete_api.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+
+
+parameters:
+    Poquete.Magic.Utility.class  : 'Poquete\APIBundle\Magic\Utility'
+
+services:
+    Poquete.Utility:
+        class: %Poquete.Magic.Utility.class%

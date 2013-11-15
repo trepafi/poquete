@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Poquete\APIBundle\Entity\Relationships" table="Relationships">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId1" type="integer" column="user_id_1" nullable="true"/>
+    <field name="userId2" type="integer" column="user_id_2" nullable="true"/>
+    <field name="universeId1" type="integer" column="universe_id_1" nullable="true"/>
+    <field name="universeId2" type="integer" column="universe_id_2" nullable="true"/>
+    <field name="status1" type="integer" column="status_1" nullable="true"/>
+    <field name="status2" type="integer" column="status_2" nullable="true"/>
+    <field name="date" type="datetime" column="date" nullable="true"/>
+  </entity>
+</doctrine-mapping>

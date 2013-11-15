@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Poquete\APIBundle\Entity\Plans" table="Plans">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="title" type="string" column="title" length="100" nullable="true"/>
+    <field name="friendly" type="string" column="friendly" length="100" nullable="true"/>
+    <field name="score" type="integer" column="score" nullable="true"/>
+    <field name="timestamp" type="date" column="timestamp" nullable="true"/>
+    <field name="price" type="decimal" column="price" nullable="true"/>
+    <field name="vacancies" type="integer" column="vacancies" nullable="true"/>
+    <field name="location" type="string" column="location" length="100" nullable="true"/>
+    <field name="coordinates" type="string" column="coordinates" length="100" nullable="true"/>
+    <field name="meetPointLocation" type="string" column="meet_point_location" length="100" nullable="true"/>
+    <field name="meetPointCoordinates" type="string" column="meet_point_coordinates" length="100" nullable="true"/>
+    <field name="observations" type="string" column="observations" length="1000" nullable="true"/>
+    <field name="descriptions" type="string" column="descriptions" length="1000" nullable="true"/>
+    <field name="typePrivacy" type="string" column="type_privacy" length="10" nullable="true"/>
+  </entity>
+</doctrine-mapping>

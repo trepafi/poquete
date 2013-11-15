@@ -1,3 +1,4 @@
-poquete_api_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: PoqueteAPIBundle:Default:index }
+# Index & Search results
+PoqueteAPISiteBundle_all:
+    resource: "@PoqueteAPIBundle/Controller"
+    type:     annotation
