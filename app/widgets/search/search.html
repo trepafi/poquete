@@ -1,3 +1,54 @@
+<div class="principal">
+	<div class="home-input input1">
+		<lt-gm-typeahead label="Dónde?" model="data.where" input-class="input-home input-where" label-class="home-label"></lt-gm-typeahead>
+	</div>
+	<div class="home-input input2">
+		<lt-input-text label="Qué?" placeholder="" icon="search" width="150" model="data.what" input-class="input-home input-what" label-class="home-label"></lt-input-text>
+	</div>
+	<div class="home-input input3">
+		<lt-datepicker label="Cuándo?" model="data.when" odate="odate" input-class="input-home input-when"></lt-datepicker label-class="home-label">
+	</div>
+	<div class="clear"></div>
+
+	<div class="row">
+		<div class="span6">
+			<lt-google-map id="map.id" coordinates="map.coordinates" center="map.center" class="map map-simple-search"></lt-google-map>
+		</div>
+		<div class="span6">
+			
+			<table class="search-results">
+				<tr ng-repeat="plan in result" ng-class="{'white-row': $odd}" ng-show="pages.start <= $index && $index < pages.end">
+					<td class="icon-field"><img src="img/icon-{{plan.type == 'poquet' ? 'alone' : 'meeting'}}.png" /></td>
+					<td class="text-field"><a href="#">{{plan.title|truncate:35}}</a></td>
+					<td class="date-field"><a href="#">{{plan.date}}</a></td>
+				</tr>
+			</table>
+			<div ng-show="result.length == 0">No hemos podido encontrar planes con los criterios que buscabas</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="span6">
+			<span>{{result.length}} <em> planes localizados en el perímetro</em></span>
+		</div>
+		<div class="span6">
+			<div class="row">
+				<div class="span3">
+					<pagination total-items="pages.total" page="pages.current" boundary-links="true" rotate="false" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-show="result.length > pages.size"></pagination>
+				</div>
+				<div class="span3 as-btn-container">
+					<button class="btn btn-info">
+						<i class="icon-white icon-cog"></i> Búsqueda avanzada
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 
+
+
+
 <section class="body-container">
 	<div class="body broad">
 		<div class="map-container container-simple-search">
@@ -50,4 +101,4 @@
 		</div>
 
 	</div>
-</section>
+</section> -->

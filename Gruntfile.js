@@ -140,6 +140,7 @@ module.exports = function(grunt) {
                     '<%= poquete.bower %>/angular-sanitize/angular-sanitize.js',
                     '<%= poquete.bower %>/angular-translate/angular-translate.js',
                     '<%= poquete.bower %>/angular-i18n/angular-locale_en.js',
+                    '<%= poquete.vendors %>/bootstrap/bootstrap.js',
                     '<%= poquete.vendors %>/angular-bootstrap/ui-bootstrap.js',
                     '<%= poquete.vendors %>/angular-bootstrap/ui-bootstrap-tpls.js',
                     '<%= poquete.vendors %>/marker-clusterer/marker-clusterer.js',
@@ -215,7 +216,7 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         flatten: true,
-                        src: ['<%= poquete.bower %>/bootstrap/dist/fonts/*'],
+                        src: ['<%= poquete.vendors %>/bootstrap/fonts/*'],
                         dest: '<%= poquete.dist %>/fonts/',
                         filter: 'isFile'
                     }

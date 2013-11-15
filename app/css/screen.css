@@ -1,0 +1,427 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/*import "compass/reset";*/
+/* COLORS */
+/* SIZES */
+/* MIXINS */
+/* line 45, ../sass/sass/screen.scss */
+body {
+  /*background: url(../img/background_index.png) left repeat-y;*/
+}
+
+/* line 48, ../sass/sass/screen.scss */
+.shadow {
+  background: url(../img/pageShadow.png) center repeat-y;
+}
+
+/* line 49, ../sass/sass/screen.scss */
+.container {
+  width: 991px;
+  margin: 0 auto;
+}
+
+/* TOOLS */
+/* line 55, ../sass/sass/screen.scss */
+.button {
+  background: url(../img/background_button.png) left repeat-x;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 4px;
+  padding: 0 20px;
+  cursor: pointer;
+  color: white;
+}
+
+/* line 64, ../sass/sass/screen.scss */
+.floatLeft {
+  float: left;
+}
+
+/* line 67, ../sass/sass/screen.scss */
+.floatRight {
+  float: right;
+}
+
+/* INDEX */
+/* line 72, ../sass/sass/screen.scss */
+.header {
+  height: 55px;
+  border-bottom: 3px solid #f3f3f2;
+  color: #2a6e7f;
+  background: url(../img/logo.png) center no-repeat;
+}
+/* line 77, ../sass/sass/screen.scss */
+.header .enter {
+  text-align: right;
+  float: right;
+  background: url(../img/enter.png) right no-repeat;
+  height: 30px;
+  width: 150px;
+}
+/* line 83, ../sass/sass/screen.scss */
+.header .enter span {
+  float: right;
+}
+/* line 87, ../sass/sass/screen.scss */
+.header .info, .header .enter, .header .back {
+  cursor: pointer;
+  height: 30px;
+  width: 150px;
+  padding: 0 35px 0 35px;
+  margin: 14px 18px 0 18px;
+}
+/* line 93, ../sass/sass/screen.scss */
+.header .info span, .header .enter span, .header .back span {
+  margin-top: 4px;
+}
+/* line 97, ../sass/sass/screen.scss */
+.header .info, .header .back {
+  float: left;
+  text-align: left;
+}
+/* line 100, ../sass/sass/screen.scss */
+.header .info span, .header .back span {
+  float: left;
+}
+/* line 104, ../sass/sass/screen.scss */
+.header .info {
+  background: url(../img/info.png) left no-repeat;
+}
+/* line 107, ../sass/sass/screen.scss */
+.header .back {
+  background: url(../img/back.png) left no-repeat;
+}
+
+/* line 111, ../sass/sass/screen.scss */
+.city {
+  border-style: solid;
+  border-color: #2a6e7f;
+  border-width: 5px 0;
+  height: 172px;
+  background: url(../img/background_city.png) left repeat-x;
+  color: white;
+}
+/* line 113, ../sass/sass/screen.scss */
+.city .cityRight {
+  float: right;
+  width: 320px;
+  height: 172px;
+}
+/* line 117, ../sass/sass/screen.scss */
+.city .cityRight span {
+  float: right;
+  font-size: 23px;
+  line-height: 35px;
+  margin: 20px 40px 0 0;
+}
+/* line 123, ../sass/sass/screen.scss */
+.city .cityRight .button {
+  float: right;
+  padding: 0 45px;
+  margin: 20px 45px 0 0;
+}
+
+/* line 130, ../sass/sass/screen.scss */
+.principal {
+  background-color: #f1f1f1;
+  padding: 25px;
+}
+/* line 133, ../sass/sass/screen.scss */
+.principal .input {
+  height: 70px;
+  float: left;
+  color: #2a6e7f;
+  font-size: 18px;
+  padding: 0 0 0 45px;
+  margin: 0 0 10px 0;
+}
+/* line 141, ../sass/sass/screen.scss */
+.principal .input1 {
+  width: 432px;
+  background: url(../img/ico_where.png) left no-repeat;
+}
+/* line 145, ../sass/sass/screen.scss */
+.principal .input2 {
+  float: right;
+  width: 245px;
+  background: url(../img/ico_what.png) left no-repeat;
+}
+/* line 150, ../sass/sass/screen.scss */
+.principal .input3 {
+  float: right;
+  width: 107px;
+  background: url(../img/ico_when.png) left no-repeat;
+}
+/* line 155, ../sass/sass/screen.scss */
+.principal .map {
+  background-color: white;
+  border: 1px solid #2a6e7f;
+  height: 370px;
+  width: 475px;
+  margin-bottom: 10px;
+}
+/* line 162, ../sass/sass/screen.scss */
+.principal .list {
+  background-color: white;
+  border: 1px solid #97a9ac;
+  height: 370px;
+  width: 440px;
+  float: right;
+}
+/* line 169, ../sass/sass/screen.scss */
+.principal .denounce {
+  color: #595959;
+  background: url(../img/warning.png) left no-repeat;
+  padding-left: 35px;
+}
+
+/* line 175, ../sass/sass/screen.scss */
+.bottomInfo {
+  min-height: 200px;
+  border-top: 1px solid #d0d0d0;
+}
+/* line 178, ../sass/sass/screen.scss */
+.bottomInfo .seccion {
+  float: left;
+  height: 130px;
+  margin: 45px 35px 0;
+  width: 259px;
+  color: #2a6e7f;
+}
+/* line 184, ../sass/sass/screen.scss */
+.bottomInfo .seccion span {
+  font-size: 18px;
+}
+/* line 187, ../sass/sass/screen.scss */
+.bottomInfo .seccion .button {
+  position: absolute;
+  margin: 15px 0 0 0;
+}
+/* line 191, ../sass/sass/screen.scss */
+.bottomInfo .seccion img {
+  float: right;
+}
+
+/* line 196, ../sass/sass/screen.scss */
+.footer {
+  font-size: 13px;
+  color: white;
+  background-color: #2a6e7f;
+  height: 20px;
+  padding: 30px 20px;
+}
+
+/* CREATE PLAN 1ST STEP */
+/* line 205, ../sass/sass/screen.scss */
+.plan_title {
+  border-style: solid;
+  border-color: #2a6e7f;
+  border-width: 5px 0;
+  height: 56px;
+  background: url(../img/background_city.png) left repeat-x;
+  color: white;
+}
+/* line 207, ../sass/sass/screen.scss */
+.plan_title .title {
+  font-size: 18px;
+  margin: 0 5px;
+}
+/* line 211, ../sass/sass/screen.scss */
+.plan_title .hashtag {
+  color: #1ed8df;
+}
+/* line 214, ../sass/sass/screen.scss */
+.plan_title .rightZone, .plan_title .dates {
+  height: 40px;
+  text-align: center;
+  float: right;
+  margin: 8px 40px;
+}
+/* line 219, ../sass/sass/screen.scss */
+.plan_title .rightZone .date, .plan_title .dates .date {
+  color: #1ed8df;
+  font-size: 18px;
+}
+/* line 226, ../sass/sass/screen.scss */
+.plan_title .rightZone {
+  line-height: 40px;
+}
+/* line 228, ../sass/sass/screen.scss */
+.plan_title .rightZone img {
+  vertical-align: top;
+}
+
+/* line 233, ../sass/sass/screen.scss */
+.plan_data {
+  width: 593.75px;
+  color: #2a6e7f;
+  margin: 35px 20px;
+  border-right-style: solid;
+  border-right-color: #2a6e7f;
+  border-right-width: 1px;
+  padding-right: 20px;
+}
+/* line 244, ../sass/sass/screen.scss */
+.plan_data .author .avatar {
+  float: left;
+  margin-right: 25px;
+  border-style: solid;
+  border-color: #2a6e7f;
+  border-width: 4px;
+  border-radius: 3px;
+  background: url(../img/avatar.png) left no-repeat;
+  width: 58px;
+  height: 58px;
+}
+/* line 257, ../sass/sass/screen.scss */
+.plan_data .author .name {
+  color: black;
+  font-size: 24px;
+  margin: 15px 0 30px;
+}
+/* line 262, ../sass/sass/screen.scss */
+.plan_data .author .star {
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  padding-top: 22px;
+  float: right;
+  background: url(../img/star.png) left top no-repeat;
+  width: 60px;
+  height: 36px;
+}
+/* line 273, ../sass/sass/screen.scss */
+.plan_data .description {
+  color: #595959;
+}
+
+/* line 277, ../sass/sass/screen.scss */
+.people {
+  width: 330px;
+  color: #2a6e7f;
+  margin: 35px 20px;
+  float: right;
+}
+/* line 282, ../sass/sass/screen.scss */
+.people .capacity, .people .attendees, .people .amount {
+  margin: 0 20px 10px;
+  float: left;
+}
+/* line 286, ../sass/sass/screen.scss */
+.people .capacity, .people .attendees {
+  width: 70px;
+  padding-left: 50px;
+}
+/* line 290, ../sass/sass/screen.scss */
+.people .amount {
+  width: 110px;
+  color: black;
+}
+/* line 294, ../sass/sass/screen.scss */
+.people .capacity {
+  background: url(../img/capacity.png) left top no-repeat;
+}
+/* line 297, ../sass/sass/screen.scss */
+.people .attendees {
+  background: url(../img/attendees.png) left top no-repeat;
+}
+/* line 300, ../sass/sass/screen.scss */
+.people .pictures {
+  margin: 20px 10px;
+  width: 319px;
+}
+/* line 303, ../sass/sass/screen.scss */
+.people .pictures .picture {
+  float: left;
+  margin: 4px;
+  background: url(../img/avatar2.png) left no-repeat;
+  width: 53px;
+  height: 53px;
+  border-style: solid;
+  border-color: #2a6e7f;
+  border-width: 1px;
+}
+
+/* CREATE PLAN 2ST STEP */
+/* line 319, ../sass/sass/screen.scss */
+.bottomInfo {
+  height: auto;
+}
+/* line 321, ../sass/sass/screen.scss */
+.bottomInfo .stuff {
+  position: absolute;
+  margin: 40px 30px;
+}
+/* line 325, ../sass/sass/screen.scss */
+.bottomInfo .formZone {
+  box-shadow: 2px 2px 5px #999;
+  border-radius: 10px;
+  margin: 20px 180px;
+  width: 560px;
+}
+/* line 330, ../sass/sass/screen.scss */
+.bottomInfo .formZone .title {
+  background-color: #a2b8c8;
+  color: white;
+  text-align: center;
+  font-size: 17px;
+  height: 50px;
+  line-height: 40px;
+  background: url(../img/background_hole_bluewhite.png) left bottom repeat-x #a2b8c8;
+}
+/* line 339, ../sass/sass/screen.scss */
+.bottomInfo .formZone .title1 {
+  border-radius: 10px 10px 0 0;
+}
+/* line 342, ../sass/sass/screen.scss */
+.bottomInfo .formZone .fieldZone {
+  padding: 15px;
+  color: #187b96;
+  background-color: #fafafa;
+}
+/* line 347, ../sass/sass/screen.scss */
+.bottomInfo .formZone .fieldZone1 {
+  background: url(../img/background_hole_whiteblue.png) left bottom repeat-x #fafafa;
+}
+/* line 350, ../sass/sass/screen.scss */
+.bottomInfo .formZone .fieldZone2 {
+  background: url(../img/background_hole_white.png) left bottom repeat-x #fafafa;
+}
+/* line 353, ../sass/sass/screen.scss */
+.bottomInfo .formZone .fieldZone3 {
+  border-radius: 0 0 10px 10px;
+}
+/* line 356, ../sass/sass/screen.scss */
+.bottomInfo .formZone .fieldZone4 {
+  border-radius: 10px 10px 0 0;
+}
+/* line 360, ../sass/sass/screen.scss */
+.bottomInfo .info {
+  margin-top: 100px;
+  font-weight: bold;
+  font-size: 13px;
+  background-color: #e3f3f7;
+  float: right;
+  width: 175px;
+  padding: 10px 20px;
+  margin-right: 15px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 2px 2px 5px #999999;
+}
+/* line 372, ../sass/sass/screen.scss */
+.bottomInfo .info .text {
+  margin-top: 10px;
+  color: #5c5c5c;
+  font-size: 12px;
+  text-align: left;
+  font-weight: normal;
+}
+/* line 379, ../sass/sass/screen.scss */
+.bottomInfo .info .triangleBlueLeft {
+  float: left;
+  margin-left: -30px;
+  margin-top: 10px;
+}

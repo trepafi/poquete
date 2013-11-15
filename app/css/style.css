@@ -1,0 +1,191 @@
+body{
+	/*background: url(../img/background_index.png) left repeat-y;*/
+}
+
+
+
+/* Lt */
+.input-home {
+	display: block;
+	margin-top: 10px;
+}
+.input-where {
+	width: 407px;
+}
+.input-when {
+	width: 80px;
+}
+.input-what {
+	width: 200px;
+}
+.clear {
+	clear: both;
+}
+.search-results tr {
+	height: 37px;
+}
+.search-results tr.white-row {
+	background: #E9E9E9;
+}
+.search-results td.date-field {
+	width: 100px;
+}
+.search-results td.text-field {
+	width: 290px;
+}
+.search-results td.icon-field {
+	width: 45px;
+	text-align: center;
+}
+.as-btn-container {
+	margin: 20px 0 20px 20px;
+}
+
+
+
+.shadow { background: url(../img/pageShadow.png) center repeat-y; }
+.container{
+	width: 991px;
+	margin: 0 auto;
+}
+
+/* TOOLS */
+.button{
+	background: url(../img/background_button.png) left repeat-x;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 4px;
+	padding: 0 20px;
+	cursor: pointer;
+	color: #FFFFFF;
+}
+.float-left{
+	float: left;
+}
+.float-right{
+	float: right;
+}
+
+ /* INDEX */
+.header{
+	height: 55px;
+	border-bottom: 3px solid #f3f3f2;
+	color: #2a6e7f;
+	text-align: center;
+}
+.header .info, .header .enter{
+	cursor: pointer;
+	height: 30px;
+	width: 150px;
+	padding: 0 35px 0 35px;
+	margin: 14px 18px 0 18px;
+}
+.header .info{
+	float: left;
+	text-align: left;
+	background: url(../img/info.png) left no-repeat;
+}
+.header .info span, .header .enter span{
+    margin-top: 4px;
+}
+.header .info span{
+	float: left;
+}
+.header .enter span{
+	float: right;
+}
+.header .enter{
+	text-align:right;
+	float: right;
+	background: url(../img/enter.png) right no-repeat;
+	height: 30px;
+	width: 150px;
+}
+.header img{
+	margin-top: 8px;
+}
+.city{
+	border-top: 5px solid #2a6e7f;
+	border-bottom: 5px solid #2a6e7f;
+	height: 172px;
+	background: url(../img/background_city.png) left repeat-x;
+	color: #FFFFFF;
+}
+.city .cityRight{
+	float: right;
+    width: 320px;
+    height: 172px;
+}
+.city .cityRight span{
+	float: right;
+    font-size: 23px;
+    line-height: 35px;
+    margin: 20px 40px 0 0;
+}
+.city .cityRight .button{
+	float: right;
+	padding: 0 45px;
+	margin: 20px 45px 0 0;
+}
+.principal{
+	background-color: #f1f1f1;
+	padding: 25px;
+}
+.principal .home-input{
+	height: 70px;
+	float: left;
+	color: #2a6e7f;
+	padding: 0 0 0 45px;
+	margin: 0 0 10px 0;
+}
+.principal .home-label {
+	font-size: 18px;
+}
+.principal .input1{
+	width: 432px;
+	background: url(../img/ico_where.png) left no-repeat;
+}
+.principal .input2{
+	float: left;
+	width: 245px;
+	background: url(../img/ico_what.png) left no-repeat;
+}
+.principal .input3{
+	float: left;
+	width: 107px;
+	background: url(../img/ico_when.png) left no-repeat;
+}
+.principal .map{
+	background-color: #FFFFFF;
+	border: 1px solid #2c8da4;
+	height: 370px;
+	margin: 0 20px 10px 0;
+}
+.bottomInfo{
+	height: 200px;
+	border-top: 1px solid #d0d0d0;
+}
+.bottomInfo section{
+	float: left;
+	height: 130px;
+	margin: 45px 35px 0;
+	width: 259px;
+	color: #2a6e7f;
+}
+.bottomInfo section span{
+	font-size: 18px;
+}
+.bottomInfo section .button{
+	position: absolute;
+	margin: 15px 0 0 0;
+}
+.bottomInfo section img{
+	float: right;
+}
+.footer{
+	font-size: 13px;
+	color: #FFFFFF;
+	background-color: #2a6e7f;
+	height: 20px;
+	padding: 30px 20px;
+}

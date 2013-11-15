@@ -9,6 +9,7 @@
 					model: '=',
 					label: '@',
 					inputClass: '@',
+					labelClass: '@',
 					width: '@',
 					icon: '@',
 					placeholder: '@'

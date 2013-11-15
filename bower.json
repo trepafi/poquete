@@ -16,7 +16,7 @@
     "angular-animate": "~1.2.0",
     "angular-sanitize": "~1.2.0",
     "angular-translate": "~1.1.0",
-    "bootstrap": "~2.2",
+    "bootstrap": "~3",
     "when": "~2.4.0",
     "autobahnjs": "~0.7.9",
     "momentjs": "~2.3.1",

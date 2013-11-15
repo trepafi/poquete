@@ -9,6 +9,7 @@
 					model: '=',
 					label: '@',
 					inputClass: '@',
+					labelClass: '@',
 					odate: '='
 				},
 				controller: 'DatepickerCtrl',

@@ -9,6 +9,7 @@
 					model: '=',
 					label: '@',
 					inputClass: '@',
+					labelClass: '@',
 					items: '='
 				},
 				controller: 'TypeaheadCtrl',
